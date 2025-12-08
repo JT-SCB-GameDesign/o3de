@@ -21,7 +21,7 @@ namespace AZStd
     };
 
     template<size_t Len, size_t Align = alignof(max_align_t)>
-    using aligned_storage_t = aligned_storage<Len, Align>::type;
+    using aligned_storage_t = typename aligned_storage<Len, Align>::type;
 
     template<typename T>
     using aligned_storage_for_t = aligned_storage_t<sizeof(T), alignof(T)>;
